@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Boise State Innovation Competition 2025</title>
   <style>
     body {
@@ -15,11 +15,11 @@
     header {
       background-color: #0033a0;
       color: white;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       max-width: 800px;
       margin: auto;
       background-color: white;
@@ -57,6 +57,14 @@
       width: 200px;
       height: auto;
     }
+    @media (max-width: 600px) {
+      .qr-section img {
+        width: 150px;
+      }
+      iframe {
+        height: 600px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -65,7 +73,7 @@
     <p><em>Unleash Your Creativity and Drive Innovation</em></p>
   </header>
   <main>
-    <div id="countdown"></div>
+    <div id="countdown">Loading countdown...</div>
 
     <h2>Event Details</h2>
     <ul>
@@ -85,12 +93,14 @@
 
     <div class="qr-section">
       <h2>Scan to View This Page</h2>
-      <img src="boise_innovation_qr.png.png" alt="QR Code to Landing Page">
+      <img src="boise_innovation_qr.png" alt="QR Code linking to this page" />
       <p>Scan with your phone to access this page anytime.</p>
     </div>
 
     <h2>Interest Form</h2>
-    <iframe src="https://docs.google.com/forms/d/1hKswbgbjqI9tP-ddogTgb59YRQFdn3yGr640MaFl_lk/viewform?embedded=true" width="100%" height="800">Loading…</iframe>
+    <iframe src="https://docs.google.com/forms/d/1hKswbgbjqI9tP-ddogTgb59YRQFdn3yGr640MaFl_lk/viewform?embedded=true" width="100%" height="800">
+      Loading…
+    </iframe>
 
     <h2>Contact Information</h2>
     <p>For any questions or further information, please contact:</p>
@@ -100,7 +110,33 @@
     </ul>
 
     <h2>Additional Resources</h2>
-    <p><a href="https://www.boisestate.edu/cid/">College of Innovation and Design</a></p>
+    <p><a href="https://www.boisestate.edu/cid/" target="_blank" rel="noopener noreferrer">College of Innovation and Design</a></p>
   </main>
 
   <script>
+    // Countdown Timer Script
+    const countdownElement = document.getElementById('countdown');
+    const targetDate = new Date("November 15, 2025 09:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "The event is happening now!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
