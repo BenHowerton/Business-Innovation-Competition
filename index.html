@@ -2,68 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Enter the Boise State Innovation Competition 2025. Win prizes, pitch your idea, and connect with industry leaders." />
+  <meta property="og:title" content="Boise State Innovation Competition 2025" />
+  <meta property="og:description" content="Pitch your big idea and compete for $10,000 in prizes." />
+  <meta property="og:image" content="https://yourdomain.com/assets/og-image.png" />
+  <meta property="og:url" content="https://yourusername.github.io/innovation-competition/" />
   <title>Boise State Innovation Competition 2025</title>
   <style>
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f9ff;
       color: #333;
-      margin: 0;
-      padding: 0;
+      line-height: 1.6;
     }
+
     header {
       background-color: #0033a0;
-      color: white;
+      color: #fff;
       padding: 2rem 1rem;
       text-align: center;
     }
+
     main {
-      padding: 2rem 1rem;
       max-width: 800px;
       margin: auto;
-      background-color: white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      background: #fff;
       border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 2rem 1.5rem;
     }
+
     h1, h2 {
       color: #0033a0;
+      margin-top: 2rem;
     }
+
     ul {
       padding-left: 1.5rem;
     }
-    iframe {
-      border: none;
-      border-radius: 8px;
-    }
+
     a {
       color: #0033a0;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
     #countdown {
       font-size: 1.5rem;
-      color: #0033a0;
-      margin-bottom: 1.5rem;
+      font-weight: bold;
       text-align: center;
+      color: #0033a0;
     }
+
     .qr-section {
       text-align: center;
-      margin: 2rem 0;
     }
+
     .qr-section img {
       width: 200px;
       height: auto;
     }
+
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      border-radius: 8px;
+    }
+
     @media (max-width: 600px) {
       .qr-section img {
         width: 150px;
       }
+
       iframe {
         height: 600px;
       }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin: 3rem 0 1rem;
     }
   </style>
 </head>
@@ -72,49 +106,65 @@
     <h1>Boise State Innovation Competition 2025</h1>
     <p><em>Unleash Your Creativity and Drive Innovation</em></p>
   </header>
+
   <main>
-    <div id="countdown">Loading countdown...</div>
+    <section id="countdown" class="section">Loading countdown...</section>
 
-    <h2>Event Details</h2>
-    <ul>
-      <li><strong>Date:</strong> November 15, 2025</li>
-      <li><strong>Location:</strong> Skaggs Hall, 2360 W University Drive, Boise, ID 83706</li>
-      <li><strong>Eligibility:</strong> Open to all Boise State students passionate about innovation.</li>
-      <li><strong>Prizes:</strong> Up to $10,000 in prize money available</li>
-      <li><strong>Challenge:</strong> Give us your best elevator business pitch!</li>
-    </ul>
+    <section class="section">
+      <h2>Event Details</h2>
+      <ul>
+        <li><strong>Date:</strong> November 15, 2025</li>
+        <li><strong>Location:</strong> Skaggs Hall, 2360 W University Drive, Boise, ID 83706</li>
+        <li><strong>Eligibility:</strong> Open to all Boise State students passionate about innovation.</li>
+        <li><strong>Prizes:</strong> Up to $10,000 in prize money available</li>
+        <li><strong>Challenge:</strong> Deliver your best elevator business pitch!</li>
+      </ul>
+    </section>
 
-    <h2>Benefits of Participation</h2>
-    <ul>
-      <li>Gain recognition for your innovative ideas.</li>
-      <li>Network with industry professionals and like-minded peers.</li>
-      <li>Compete for prizes and potential funding opportunities.</li>
-    </ul>
+    <section class="section">
+      <h2>Benefits of Participation</h2>
+      <ul>
+        <li>Gain recognition for your innovative ideas.</li>
+        <li>Network with industry professionals and like-minded peers.</li>
+        <li>Compete for prizes and potential funding opportunities.</li>
+      </ul>
+    </section>
 
-    <div class="qr-section">
+    <section class="section qr-section">
       <h2>Scan to View This Page</h2>
-      <img src="boise_innovation_qr.png" alt="QR Code linking to this page" />
-      <p>Scan with your phone to access this page anytime.</p>
-    </div>
+      <img src="boise_innovation_qr.png" alt="QR Code to Boise Innovation Competition page" />
+      <p>Use your phone camera to scan and revisit anytime.</p>
+    </section>
 
-    <h2>Interest Form</h2>
-    <iframe src="https://docs.google.com/forms/d/1hKswbgbjqI9tP-ddogTgb59YRQFdn3yGr640MaFl_lk/viewform?embedded=true" width="100%" height="800">
-      Loading…
-    </iframe>
+    <section class="section">
+      <h2>Interest Form</h2>
+      <iframe src="https://docs.google.com/forms/d/1hKswbgbjqI9tP-ddogTgb59YRQFdn3yGr640MaFl_lk/viewform?embedded=true">
+        Loading interest form...
+      </iframe>
+    </section>
 
-    <h2>Contact Information</h2>
-    <p>For any questions or further information, please contact:</p>
-    <ul>
-      <li><strong>Email:</strong> <a href="mailto:kneupert@boisestate.edu">kneupert@boisestate.edu</a></li>
-      <li><strong>Phone:</strong> (208) 426-XXXX</li>
-    </ul>
+    <section class="section">
+      <h2>Contact Information</h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:kneupert@boisestate.edu">kneupert@boisestate.edu</a></li>
+        <li><strong>Phone:</strong> (208) 426-XXXX</li>
+      </ul>
+    </section>
 
-    <h2>Additional Resources</h2>
-    <p><a href="https://www.boisestate.edu/cid/" target="_blank" rel="noopener noreferrer">College of Innovation and Design</a></p>
+    <section class="section">
+      <h2>Additional Resources</h2>
+      <p>
+        Visit the <a href="https://www.boisestate.edu/cid/" target="_blank" rel="noopener noreferrer">
+        College of Innovation and Design</a> to learn more.
+      </p>
+    </section>
   </main>
 
+  <footer>
+    © 2025 Boise State Innovation Competition • All rights reserved
+  </footer>
+
   <script>
-    // Countdown Timer Script
     const countdownElement = document.getElementById('countdown');
     const targetDate = new Date("November 15, 2025 09:00:00").getTime();
 
@@ -123,7 +173,7 @@
       const distance = targetDate - now;
 
       if (distance < 0) {
-        countdownElement.innerHTML = "The event is happening now!";
+        countdownElement.textContent = "🚀 The event is happening now!";
         return;
       }
 
@@ -132,7 +182,7 @@
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      countdownElement.innerHTML = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      countdownElement.textContent = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
     }
 
     setInterval(updateCountdown, 1000);
