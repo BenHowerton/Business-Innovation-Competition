@@ -2,191 +2,429 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Enter the Boise State Innovation Competition 2025. Win prizes, pitch your idea, and connect with industry leaders." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boise State Innovation Competition 2025 — Pitch. Build. Win.</title>
+
+  <!-- Canonical & SEO -->
+  <link rel="canonical" href="https://yourusername.github.io/innovation-competition/" />
+  <meta name="description" content="Boise State Innovation Competition 2025. Apply by Oct 26. Entrepreneur Connect Nov 12. Competition Nov 13–14. Two tracks, $10,000 in prizes." />
+  <meta name="theme-color" content="#0033a0" />
+
+  <!-- Social sharing -->
   <meta property="og:title" content="Boise State Innovation Competition 2025" />
-  <meta property="og:description" content="Pitch your big idea and compete for $10,000 in prizes." />
+  <meta property="og:description" content="Apply by Oct 26. Entrepreneur Connect Nov 12. Competition Nov 13–14. $10,000 in prizes." />
   <meta property="og:image" content="https://yourdomain.com/assets/og-image.png" />
   <meta property="og:url" content="https://yourusername.github.io/innovation-competition/" />
-  <title>Boise State Innovation Competition 2025</title>
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Performance hint for embedded form -->
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+  <link rel="preconnect" href="https://forms.gle" crossorigin>
+
   <style>
+    :root {
+      --bsu-blue: #0033a0;
+      --bg: #f5f9ff;
+      --text: #333;
+      --muted: #666;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(0,0,0,.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f9ff;
-      color: #333;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+    }
+    a { color: var(--bsu-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #7aa2ff; outline-offset: 2px; }
+
+    /* Skip link (a11y) */
+    .skip-link {
+      position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem; top: 1rem; width: auto; height: auto; padding: .5rem .75rem;
+      background: #fff; border-radius: 8px; box-shadow: var(--shadow);
     }
 
     header {
-      background-color: #0033a0;
+      background: var(--bsu-blue);
       color: #fff;
-      padding: 2rem 1rem;
+      padding: 2.25rem 1rem;
       text-align: center;
     }
+    header h1 { margin: 0 0 .25rem; }
+    header p { margin: 0; opacity: .95; }
 
     main {
-      max-width: 800px;
-      margin: auto;
+      max-width: 860px;
+      margin: clamp(16px, 3vw, 32px) auto;
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      padding: 2rem 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(16px, 4vw, 32px);
+    }
+    h2 { color: var(--bsu-blue); margin-top: 2rem; }
+    ul { padding-left: 1.2rem; }
+    .section { margin-bottom: 2rem; }
+    .stack { display: grid; gap: .5rem; }
+
+    /* Countdowns */
+    .countdowns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .count-card {
+      border: 1px solid #e7eefc;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+    .count-title {
+      font-weight: 700;
+      color: var(--bsu-blue);
+      margin-bottom: .25rem;
+    }
+    .count-when {
+      font-size: .95rem;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+    .count-value {
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 800;
+      color: var(--bsu-blue);
     }
 
-    h1, h2 {
-      color: #0033a0;
-      margin-top: 2rem;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-    }
-
-    a {
-      color: #0033a0;
+    /* CTA button */
+    .cta-wrap { text-align: center; margin: 1.5rem 0 2rem; }
+    .apply-btn {
+      display: inline-block;
+      padding: 0.85rem 1.75rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      background: var(--bsu-blue);
+      color: #fff;
+      border-radius: 999px;
       text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+      box-shadow: var(--shadow);
+    }
+    .apply-btn:hover,
+    .apply-btn:focus-visible {
+      background: #00267a;
+      transform: translateY(-2px);
     }
 
-    a:hover {
-      text-decoration: underline;
+    /* Track comparison layout */
+    .track-compare {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
     }
-
-    .section {
-      margin-bottom: 2rem;
+    .track-col {
+      background: #fff;
+      border: 1px solid #e7eefc;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 1rem 1.25rem;
     }
-
-    #countdown {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-      color: #0033a0;
+    .track-title {
+      margin: 0 0 .5rem 0;
+      color: var(--bsu-blue);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
     }
-
-    .qr-section {
-      text-align: center;
+    .badge {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .02em;
+      padding: .25rem .5rem;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--bsu-blue);
     }
+    .badge-alt { background: #2457ff; }
 
+    .qr-section { text-align: center; }
     .qr-section img {
-      width: 200px;
+      width: min(220px, 60vw);
       height: auto;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
     }
-
     iframe {
       width: 100%;
-      height: 800px;
+      height: 780px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
+      background: #f7f9fc;
     }
 
-    @media (max-width: 600px) {
-      .qr-section img {
-        width: 150px;
-      }
-
-      iframe {
-        height: 600px;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
+    @media (max-width: 720px) {
+      .countdowns { grid-template-columns: 1fr; }
+      .track-compare { grid-template-columns: 1fr; }
+      header h1 { font-size: 1.5rem; }
+      iframe { height: 600px; }
     }
 
     footer {
       text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      margin: 3rem 0 1rem;
+      font-size: .95rem;
+      color: var(--muted);
+      margin: 2.5rem 0 1.25rem;
     }
   </style>
+
+  <!-- Structured Data: Event (multi-day) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Boise State Innovation Competition 2025",
+    "startDate": "2025-11-12T09:00:00-07:00",
+    "endDate": "2025-11-14T17:00:00-07:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Boise State University (Campus-wide)",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Boise",
+        "addressRegion": "ID",
+        "postalCode": "83725",
+        "addressCountry": "US"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Boise State University — College of Innovation and Design",
+      "url": "https://www.boisestate.edu/cid/"
+    },
+    "description": "Entrepreneur Connect Nov 12; Competition events Nov 13–14. Two tracks, $10,000 in prizes. Apply by Oct 26, 2025 at 11:59 PM.",
+    "image": ["https://yourdomain.com/assets/og-image.png"]
+  }
+  </script>
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header role="banner">
     <h1>Boise State Innovation Competition 2025</h1>
     <p><em>Unleash Your Creativity and Drive Innovation</em></p>
   </header>
 
-  <main>
-    <section id="countdown" class="section">Loading countdown...</section>
+  <main id="main" role="main" aria-label="Main content">
+    <!-- Key Dates / Countdowns -->
+    <section class="section" aria-labelledby="countdowns">
+      <h2 id="countdowns">Key Dates</h2>
+      <div class="countdowns" aria-live="polite">
+        <div class="count-card">
+          <div class="count-title">Application Deadline</div>
+          <div class="count-when">Sunday, Oct 26, 2025 — 11:59 PM (MDT)</div>
+          <div class="count-value" id="deadline-count">Calculating…</div>
+        </div>
+        <div class="count-card">
+          <div class="count-title">Event Kickoff — Entrepreneur Connect</div>
+          <div class="count-when">Wednesday, Nov 12, 2025 (MST)</div>
+          <div class="count-value" id="event-count">Calculating…</div>
+        </div>
+      </div>
+    </section>
 
-    <section class="section">
-      <h2>Event Details</h2>
-      <ul>
-        <li><strong>Date:</strong> November 15, 2025</li>
-        <li><strong>Location:</strong> Skaggs Hall, 2360 W University Drive, Boise, ID 83706</li>
-        <li><strong>Eligibility:</strong> Open to all Boise State students passionate about innovation.</li>
-        <li><strong>Prizes:</strong> Up to $10,000 in prize money available</li>
-        <li><strong>Challenge:</strong> Deliver your best elevator business pitch!</li>
+    <!-- Apply Now (top) -->
+    <section class="section" id="cta">
+      <div class="cta-wrap">
+        <a href="#interest-form" class="apply-btn">🚀 Apply Now</a>
+      </div>
+    </section>
+
+    <!-- Schedule -->
+    <section class="section" aria-labelledby="schedule">
+      <h2 id="schedule">Schedule</h2>
+      <ul class="stack" role="list">
+        <li><strong>Entrepreneur Connect:</strong> Wednesday, <u>Nov 12, 2025</u></li>
+        <li><strong>Competition Events:</strong> Thursday–Friday, <u>Nov 13–14, 2025</u></li>
       </ul>
     </section>
 
-    <section class="section">
-      <h2>Benefits of Participation</h2>
-      <ul>
+    <!-- Tracks & Application Requirements -->
+    <section class="section" aria-labelledby="tracks">
+      <h2 id="tracks">Tracks & Application Requirements</h2>
+      <ul class="stack" role="list">
+        <li><strong>Participant Team Application Deadline:</strong> Sunday, Oct 26, 2025, 11:59 PM (MDT)</li>
+        <li><strong>Application Package contents required:</strong>
+          <ul>
+            <li><strong>Early Stage Track:</strong> 60‑second video</li>
+            <li><strong>Open Track:</strong> Full Business Model Canvas (BMC) with financials</li>
+          </ul>
+        </li>
+        <li><strong>Two competition tracks:</strong> Early Stage (idea pitches) and Open Track (more developed ventures)</li>
+      </ul>
+
+      <div class="track-compare" role="table" aria-label="Comparison of competition tracks">
+        <div class="track-col" role="rowgroup" aria-labelledby="early-stage">
+          <h3 id="early-stage" class="track-title">
+            <span class="badge">Early Stage</span> Idea Pitch
+          </h3>
+          <ul class="stack" role="list">
+            <li>60‑second video submission</li>
+            <li>Some progress with <strong>customer discovery</strong></li>
+            <li>Clear <strong>target customer</strong> articulation</li>
+            <li>Early <strong>product/market fit</strong> explanation</li>
+          </ul>
+        </div>
+
+        <div class="track-col" role="rowgroup" aria-labelledby="open-track">
+          <h3 id="open-track" class="track-title">
+            <span class="badge badge-alt">Open Track</span> Developed Venture
+          </h3>
+          <ul class="stack" role="list">
+            <li><strong>Full BMC</strong> (Business Model Canvas) explanation</li>
+            <li><strong>Related financials</strong> (required)</li>
+            <li>Assumes deeper validation and traction</li>
+            <li>Suitable for teams beyond ideation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Details -->
+    <section class="section" aria-labelledby="event-details">
+      <h2 id="event-details">Event Details</h2>
+      <ul class="stack" role="list">
+        <li><strong>Location:</strong> Campus-wide, Boise State University, Boise, ID 83725</li>
+        <li><strong>Eligibility:</strong> Open to <u>ALL</u> Boise State students. Undergraduate and graduate students are encouraged.</li>
+        <li><strong>Prizes:</strong> $10,000 in prize money available</li>
+        <li><strong>Challenge:</strong> Deliver your best business venture pitch!</li>
+      </ul>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section" aria-labelledby="benefits">
+      <h2 id="benefits">Benefits of Participation</h2>
+      <ul class="stack" role="list">
         <li>Gain recognition for your innovative ideas.</li>
-        <li>Network with industry professionals and like-minded peers.</li>
-        <li>Compete for prizes and potential funding opportunities.</li>
+        <li>Network with industry professionals and like‑minded peers.</li>
+        <li>Connect with potential partners and mentors.</li>
+        <li>Compete for prize money and potential funding opportunities.</li>
       </ul>
     </section>
 
-    <section class="section qr-section">
-      <h2>Scan to View This Page</h2>
-      <img src="boise_innovation_qr.png" alt="QR Code to Boise Innovation Competition page" />
+    <!-- QR -->
+    <section class="section qr-section" aria-labelledby="qr">
+      <h2 id="qr">Scan to View This Page</h2>
+      <img
+        src="boise_innovation_qr.png"
+        alt="QR code linking back to the competition page"
+        loading="lazy"
+        decoding="async"
+      />
       <p>Use your phone camera to scan and revisit anytime.</p>
     </section>
 
-    <section class="section">
-      <h2>Interest Form</h2>
-      <iframe src="https://docs.google.com/forms/d/1hKswbgbjqI9tP-ddogTgb59YRQFdn3yGr640MaFl_lk/viewform?embedded=true">
-        Loading interest form...
-      </iframe>
+    <!-- Interest / Application Form -->
+    <section class="section" aria-labelledby="interest-form">
+      <h2 id="interest-form">Interest Form</h2>
+      <iframe
+        title="Boise State Innovation Competition 2025 — Interest Form"
+        src="https://docs.google.com/forms/d/1hKswbgbjqI9tP-ddogTgb59YRQFdn3yGr640MaFl_lk/viewform?embedded=true"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+      >Loading interest form…</iframe>
+      <noscript>
+        <p><a href="https://docs.google.com/forms/d/1hKswbgbjqI9tP-ddogTgb59YRQFdn3yGr640MaFl_lk/viewform" rel="noopener noreferrer" target="_blank">Open the interest form</a></p>
+      </noscript>
     </section>
 
-    <section class="section">
-      <h2>Contact Information</h2>
-      <ul>
+    <!-- Contact -->
+    <section class="section" aria-labelledby="contact">
+      <h2 id="contact">Contact Information</h2>
+      <ul class="stack" role="list">
         <li><strong>Email:</strong> <a href="mailto:kneupert@boisestate.edu">kneupert@boisestate.edu</a></li>
-        <li><strong>Phone:</strong> (208) 426-XXXX</li>
+        <li><strong>Phone:</strong> <a href="tel:+1208426XXXX">(208) 426‑XXXX</a></li>
       </ul>
     </section>
 
+    <!-- Bottom CTA -->
     <section class="section">
-      <h2>Additional Resources</h2>
-      <p>
-        Visit the <a href="https://www.boisestate.edu/cid/" target="_blank" rel="noopener noreferrer">
-        College of Innovation and Design</a> to learn more.
-      </p>
+      <div class="cta-wrap">
+        <a href="#interest-form" class="apply-btn">🚀 Apply Now</a>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     © 2025 Boise State Innovation Competition • All rights reserved
   </footer>
 
-  <script>
-    const countdownElement = document.getElementById('countdown');
-    const targetDate = new Date("November 15, 2025 09:00:00").getTime();
+  <script defer>
+    // Timezone-safe ISO strings:
+    // Application deadline (Oct 26, 2025 is still DST in Boise -> MDT = UTC-06:00)
+    const DEADLINE_ISO = "2025-10-26T23:59:00-06:00";
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+    // Event kickoff (Nov 12, 2025 after DST end -> MST = UTC-07:00)
+    // Assumed 09:00; adjust if you have an exact time.
+    const EVENT_START_ISO = "2025-11-12T09:00:00-07:00";
 
-      if (distance < 0) {
-        countdownElement.textContent = "🚀 The event is happening now!";
+    const deadlineEl = document.getElementById("deadline-count");
+    const eventEl = document.getElementById("event-count");
+
+    const targets = [
+      { ts: new Date(DEADLINE_ISO).getTime(), el: deadlineEl, liveMsg: "⏳ Due now!", pastMsg: "✅ Deadline passed." },
+      { ts: new Date(EVENT_START_ISO).getTime(), el: eventEl, liveMsg: "🚀 Event day is here!", pastMsg: "✅ Event kickoff has begun." }
+    ];
+
+    function fmt(n, label) { return n + label; }
+
+    function renderCountdown(target, el, now) {
+      const diff = target - now;
+
+      // Live / past states (8-hour window)
+      if (diff <= 0 && diff > -1000 * 60 * 60 * 8) {
+        el.textContent = el === deadlineEl ? "⏳ Due now!" : "🚀 Event day is here!";
+        return;
+      }
+      if (diff <= -1000 * 60 * 60 * 8) {
+        el.textContent = el === deadlineEl ? "✅ Deadline passed." : "✅ Event kickoff has begun.";
         return;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-      countdownElement.textContent = `Countdown: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+      el.textContent = `Countdown: ${fmt(days,"d ")}${fmt(hours,"h ")}${fmt(minutes,"m ")}${fmt(seconds,"s")}`;
     }
 
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
+    function tick() {
+      const now = Date.now();
+      for (const { ts, el } of targets) renderCountdown(ts, el, now);
+    }
+    tick();
+    const interval = setInterval(tick, 1000);
+
+    // Respect reduced-motion users
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    function handleReducedMotion(e) { if (e.matches) clearInterval(interval); }
+    media.addEventListener?.("change", handleReducedMotion);
+    if (media.matches) clearInterval(interval);
   </script>
 </body>
 </html>
+
+
